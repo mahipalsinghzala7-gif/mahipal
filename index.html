@@ -1,176 +1,320 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MAHIPAL | Personal Brand</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MAHIPAL | Personal Brand</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
 
-    body {
-      background: #f5f8ff;
-      color: #222;
-      line-height: 1.6;
-    }
+html { scroll-behavior: smooth; }
 
-    header {
-      background: white;
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 10px #ddd;
-    }
+:root {
+  --bg: #f5f8ff;
+  --card: #ffffff;
+  --text: #17233d;
+  --blue: #1769e0;
+  --muted: #667085;
+}
 
-    header h2 {
-      color: #1264d8;
-    }
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: .4s;
+  overflow-x: hidden;
+}
 
-    nav a {
-      text-decoration: none;
-      color: #333;
-      margin-left: 12px;
-      font-size: 14px;
-    }
+body.dark {
+  --bg: #0b1220;
+  --card: #152238;
+  --text: #f3f6ff;
+  --muted: #b4c0d4;
+}
 
-    .hero {
-      text-align: center;
-      padding: 80px 20px;
-      background: #e7f0ff;
-    }
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 8%;
+  background: var(--card);
+  box-shadow: 0 3px 20px #00000010;
+}
 
-    .hero h1 {
-      font-size: 38px;
-      color: #1264d8;
-      margin-bottom: 10px;
-    }
+.logo {
+  font-size: 25px;
+  font-weight: 900;
+  color: var(--blue);
+  letter-spacing: 2px;
+}
 
-    .hero p {
-      font-size: 18px;
-      margin-bottom: 20px;
-    }
+.navlinks a {
+  text-decoration: none;
+  color: var(--text);
+  margin-left: 18px;
+  font-size: 14px;
+}
 
-    .btn {
-      display: inline-block;
-      background: #1264d8;
-      color: white;
-      padding: 12px 25px;
-      border-radius: 7px;
-      text-decoration: none;
-      margin: 5px;
-    }
+#theme {
+  border: none;
+  background: var(--blue);
+  color: white;
+  padding: 9px 12px;
+  border-radius: 20px;
+  margin-left: 12px;
+  cursor: pointer;
+}
 
-    .section {
-      padding: 40px 20px;
-      max-width: 850px;
-      margin: auto;
-    }
+.hero {
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 50px 20px;
+  background: radial-gradient(circle at top, #dceaff, var(--bg) 65%);
+}
 
-    .card {
-      background: white;
-      padding: 25px;
-      margin-bottom: 20px;
-      border-radius: 12px;
-      box-shadow: 0 3px 12px #ddd;
-    }
+.dark .hero {
+  background: radial-gradient(circle at top, #1b3764, var(--bg) 70%);
+}
 
-    h2 {
-      color: #1264d8;
-      margin-bottom: 15px;
-    }
+.tag {
+  color: var(--blue);
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
 
-    footer {
-      background: #1264d8;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-  </style>
+.hero h1 {
+  font-size: clamp(42px, 8vw, 76px);
+  margin-bottom: 15px;
+  animation: slideDown 1s ease;
+}
+
+.hero h1 span { color: var(--blue); }
+
+.hero p {
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 600px;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  background: var(--blue);
+  color: white;
+  padding: 14px 25px;
+  border-radius: 30px;
+  margin: 12px 6px;
+  transition: .3s;
+  box-shadow: 0 7px 20px #1769e044;
+}
+
+.btn:hover {
+  transform: translateY(-5px) scale(1.04);
+  background: #084da8;
+}
+
+section {
+  padding: 80px 8%;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.section-desc {
+  color: var(--muted);
+  margin-bottom: 35px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
+}
+
+.card {
+  background: var(--card);
+  padding: 30px 22px;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px #0000000c;
+  border: 1px solid #1769e018;
+  transition: .35s;
+  animation: fadeIn .8s ease both;
+}
+
+.card:hover {
+  transform: translateY(-9px);
+  box-shadow: 0 15px 35px #1769e225;
+}
+
+.card h3 {
+  color: var(--blue);
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.contact {
+  background: var(--card);
+  border-radius: 25px;
+  padding: 45px 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: var(--muted);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: .8s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media(max-width:600px) {
+  nav { padding: 15px 4%; }
+  .logo { font-size: 20px; }
+  .navlinks a { margin-left: 7px; font-size: 12px; }
+  section { padding: 60px 5%; }
+  .section-title { font-size: 29px; }
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <h2>MAHIPAL.</h2>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <section class="hero" id="home">
-    <h1>Hello, I'm Mahipal</h1>
-    <p>Welcome to my personal brand website.</p>
-    <a href="#about" class="btn">Explore More</a>
-  </section>
-
-  <div class="section">
-
-    <div class="card" id="about">
-      <h2>About Me</h2>
-      <p>
-        Hello! My name is Mahipal.
-        I am passionate about learning new skills,
-        technology and website development.
-        This is my personal brand website.
-      </p>
-    </div>
-
-    <div class="card" id="skills">
-      <h2>My Skills</h2>
-      <p>• HTML</p>
-      <p>• CSS</p>
-      <p>• Website Development</p>
-      <p>• Creative Thinking</p>
-    </div>
-
-    <div class="card" id="projects">
-      <h2>My Projects</h2>
-
-      <p><b>1. Personal Brand Website</b></p>
-      <p>My first professional website, created using HTML and CSS.</p>
-
-      <br>
-
-      <p><b>2. My Digital Journey</b></p>
-      <p>Learning website development and building new skills.</p>
-    </div>
-
-    <div class="card" id="services">
-      <h2>My Services</h2>
-      <p>• Website Development</p>
-      <p>• Personal Branding</p>
-      <p>• Digital Projects</p>
-    </div>
-
-    <div class="card" id="contact">
-      <h2>Contact Me</h2>
-      <p>Want to connect with me? Contact me below.</p>
-
-      <a href="mailto:yourmail@gmail.com" class="btn">
-        Email Me
-      </a>
-<a href="https://wa.me/918320445294" class="btn">
-  WhatsApp Me
-</a>
-      <a href="https://instagram.com/" class="btn">
-        Instagram
-      </a>
-    </div>
-
+<nav>
+  <div class="logo">MAHIPAL.</div>
+  <div class="navlinks">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <button id="theme" onclick="toggleTheme()">☾</button>
   </div>
+</nav>
 
-  <footer>
-    <p>© 2026 MAHIPAL. All Rights Reserved.</p>
-  </footer>
+<header class="hero" id="home">
+  <div class="tag">WELCOME TO MY WORLD</div>
+  <h1>Hello, I'm <span>Mahipal</span></h1>
+  <p>Building my personal brand, exploring creativity and creating my digital journey.</p>
+  <div>
+    <a href="#about" class="btn">Explore More</a>
+    <a href="#contact" class="btn">Contact Me</a>
+  </div>
+</header>
+
+<section id="about" class="reveal">
+  <h2 class="section-title">About Me</h2>
+  <p class="section-desc">A little introduction about myself</p>
+  <div class="card">
+    <h3>I'm Mahipal</h3>
+    <p>Welcome to my personal website. I love creativity, technology, learning new skills and building something unique. This is my digital identity.</p>
+  </div>
+</section>
+
+<section class="reveal">
+  <h2 class="section-title">My Skills</h2>
+  <p class="section-desc">Things I am learning and exploring</p>
+  <div class="grid">
+    <div class="card"><h3>HTML</h3><p>Creating website structure.</p></div>
+    <div class="card"><h3>CSS</h3><p>Designing beautiful websites.</p></div>
+    <div class="card"><h3>Web Development</h3><p>Building digital experiences.</p></div>
+    <div class="card"><h3>Creative Thinking</h3><p>Turning ideas into reality.</p></div>
+  </div>
+</section>
+
+<section class="reveal">
+  <h2 class="section-title">My Projects</h2>
+  <p class="section-desc">My creative digital work</p>
+  <div class="grid">
+    <div class="card"><h3>Personal Website</h3><p>My own personal brand website.</p></div>
+    <div class="card"><h3>Digital Journey</h3><p>Learning and creating new things.</p></div>
+  </div>
+</section>
+
+<section class="reveal">
+  <h2 class="section-title">My Services</h2>
+  <p class="section-desc">What I can work on</p>
+  <div class="grid">
+    <div class="card"><h3>Website Design</h3><p>Simple and modern website designs.</p></div>
+    <div class="card"><h3>Personal Branding</h3><p>Building a strong digital identity.</p></div>
+    <div class="card"><h3>Digital Projects</h3><p>Creative online projects.</p></div>
+  </div>
+</section>
+
+<section id="contact" class="reveal">
+  <div class="contact">
+    <h2 class="section-title">Let's Connect</h2>
+    <p class="section-desc">Have an idea? Let's talk!</p>
+
+    <a href="mailto:mahipalsinghzala7@gmail.com" class="btn">Email Me</a>
+
+    <a href="https://instagram.com/mahipalsingh____14" class="btn">Instagram</a>
+
+    <a href="https://wa.me/918320445294" class="btn">WhatsApp</a>
+  </div>
+</section>
+
+<footer>
+  © 2026 MAHIPAL. All Rights Reserved.
+</footer>
+
+<script>
+function toggleTheme() {
+  document.body.classList.toggle("dark");
+  const button = document.getElementById("theme");
+  button.textContent = document.body.classList.contains("dark") ? "☀" : "☾";
+}
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll(".reveal").forEach(section => {
+  observer.observe(section);
+});
+</script>
 
 </body>
 </html>
