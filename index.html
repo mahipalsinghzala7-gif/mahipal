@@ -1,181 +1,174 @@
-html lang="en">
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAHIPAL | Personal Brand</title>
 
-<title>MAHIPAL | Official Website</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
 
-<style>
-* {
-  box-sizing: border-box;
-}
+    body {
+      background: #f5f8ff;
+      color: #222;
+      line-height: 1.6;
+    }
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f8fafc;
-  color: #1e293b;
-}
+    header {
+      background: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px #ddd;
+    }
 
-header {
-  background: white;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 10px #00000010;
-}
+    header h2 {
+      color: #1264d8;
+    }
 
-.logo {
-  color: #2563eb;
-  font-size: 25px;
-  font-weight: bold;
-}
+    nav a {
+      text-decoration: none;
+      color: #333;
+      margin-left: 12px;
+      font-size: 14px;
+    }
 
-.hero {
-  text-align: center;
-  padding: 80px 20px;
-  background: white;
-}
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: #e7f0ff;
+    }
 
-.hero h1 {
-  font-size: 38px;
-}
+    .hero h1 {
+      font-size: 38px;
+      color: #1264d8;
+      margin-bottom: 10px;
+    }
 
-.hero span {
-  color: #2563eb;
-}
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
 
-.hero p {
-  color: #64748b;
-  line-height: 1.7;
-}
+    .btn {
+      display: inline-block;
+      background: #1264d8;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 7px;
+      text-decoration: none;
+      margin: 5px;
+    }
 
-.btn {
-  display: inline-block;
-  background: #2563eb;
-  color: white;
-  padding: 14px 25px;
-  border-radius: 8px;
-  text-decoration: none;
-  margin-top: 15px;
-}
+    .section {
+      padding: 40px 20px;
+      max-width: 850px;
+      margin: auto;
+    }
 
-.section {
-  padding: 30px 20px;
-  max-width: 700px;
-  margin: auto;
-}
+    .card {
+      background: white;
+      padding: 25px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px #ddd;
+    }
 
-.card {
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  margin-bottom: 20px;
-  box-shadow: 0 3px 15px #00000008;
-}
+    h2 {
+      color: #1264d8;
+      margin-bottom: 15px;
+    }
 
-h2 {
-  color: #2563eb;
-}
-
-.card p {
-  color: #475569;
-  line-height: 1.7;
-}
-
-footer {
-  background: #1e293b;
-  color: white;
-  text-align: center;
-  padding: 25px;
-}
-</style>
+    footer {
+      background: #1264d8;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-  <div class="logo">MAHIPAL.</div>
-  <div>Personal Brand</div>
-</header>
+  <header>
+    <h2>MAHIPAL.</h2>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<section class="hero">
-  <h1>Hello, I'm <span>Mahipal</span></h1>
+  <section class="hero" id="home">
+    <h1>Hello, I'm Mahipal</h1>
+    <p>Welcome to my personal brand website.</p>
+    <a href="#about" class="btn">Explore More</a>
+  </section>
 
-  <p>
-    Welcome to my official website.
-    Building my identity, learning and growing.
-  </p>
+  <div class="section">
 
-  <a href="#contact" class="btn">Contact Me</a>
-</section>
+    <div class="card" id="about">
+      <h2>About Me</h2>
+      <p>
+        Hello! My name is Mahipal.
+        I am passionate about learning new skills,
+        technology and website development.
+        This is my personal brand website.
+      </p>
+    </div>
 
-< class="section">
+    <div class="card" id="skills">
+      <h2>My Skills</h2>
+      <p>• HTML</p>
+      <p>• CSS</p>
+      <p>• Website Development</p>
+      <p>• Creative Thinking</p>
+    </div>
 
-  <div class="card">
-    <h2>About Me</h2>
-    <p>
-      Hello! My name is Mahipal.
-      This is my personal brand website.
-      I believe in learning and improving every day.
-    </p>
+    <div class="card" id="projects">
+      <h2>My Projects</h2>
+
+      <p><b>1. Personal Brand Website</b></p>
+      <p>My first professional website, created using HTML and CSS.</p>
+
+      <br>
+
+      <p><b>2. My Digital Journey</b></p>
+      <p>Learning website development and building new skills.</p>
+    </div>
+
+    <div class="card" id="services">
+      <h2>My Services</h2>
+      <p>• Website Development</p>
+      <p>• Personal Branding</p>
+      <p>• Digital Projects</p>
+    </div>
+
+    <div class="card" id="contact">
+      <h2>Contact Me</h2>
+      <p>Want to connect with me? Contact me below.</p>
+
+      <a href="mailto:yourmail@gmail.com" class="btn">
+        Email Me
+      </a>
+
+      <a href="https://instagram.com/" class="btn">
+        Instagram
+      </a>
+    </div>
+
   </div>
 
-  <div class="card">
-    <h2>My Skills</h2>
-    <p>• Creativity</p>
-    <p>• Communication</p>
-    <p>• Website Development</p>
-  </div>
-
-
-<div class="card" id="contact">
- 
-<div class="card" id="projects">
-  <h2>My Projects</h2>
-
-  <p>
-    <b>1. Personal Brand Website</b>
-  </p>
-  <p>
-    My first professional website,
-    created using HTML and CSS.
-  </p>
-
-  <p>
-    <b>2. My Digital Journey</b>
-  </p>
-  <p>
-    Learning website development
-    and building new skills.
-  </p>
-</div>
-
-  <h2>Contact Me</h2>
-  <p>Let's connect with me!</p>
-
-  <a class="btn"
-  href="https://wa.me/918320445294"
-  target="_blank">
-    WhatsApp Me
-  </a>
-
-
-  <br><br>
-
-  <a class="btn"
-  href="https://www.instagram.com/mahipalsingh__14/"
-  target="_blank">
-    Instagram
-  </a>
-</div>
-
-
-<footer>
-  © 2026 MAHIPAL. All Rights Reserved.
-</footer>
+  <footer>
+    <p>© 2026 MAHIPAL. All Rights Reserved.</p>
+  </footer>
 
 </body>
 </html>
-
