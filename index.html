@@ -1,354 +1,266 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#050b18">
-<title>MAHIPAL | Digital Creator</title>
+<title>IRON HOUSE | Premium Fitness Club</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-  background: #050b18;
-  color: #fff;
-  overflow-x: hidden;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  width: 350px;
-  height: 350px;
-  background: #0066ff;
-  filter: blur(160px);
-  opacity: .22;
-  top: 10%;
-  left: -150px;
-  z-index: -1;
-  pointer-events: none;
-}
-
-body::after {
-  content: "";
-  position: fixed;
-  width: 350px;
-  height: 350px;
-  background: #00bfff;
-  filter: blur(160px);
-  opacity: .15;
-  bottom: 0;
-  right: -150px;
-  z-index: -1;
-  pointer-events: none;
-}
-
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 8%;
-  background: rgba(5,11,24,.85);
-  backdrop-filter: blur(15px);
-  border-bottom: 1px solid #168bff30;
-}
-
-.logo {
-  color: #32aaff;
-  font-size: 25px;
-  font-weight: 900;
-  letter-spacing: 2px;
-  text-shadow: 0 0 15px #168bff;
-}
-
-nav a {
-  color: #cbdcff;
-  text-decoration: none;
-  margin-left: 20px;
-  font-size: 14px;
-  transition: .3s;
-}
-
-nav a:hover { color: #35aaff; }
-
-.hero {
-  min-height: 88vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 50px 20px;
-}
-
-.small-title {
-  color: #32aaff;
-  letter-spacing: 5px;
-  font-size: 13px;
-  font-weight: bold;
-  margin-bottom: 25px;
-  animation: fade 1s ease;
-}
-
-.hero h1 {
-  font-size: clamp(55px, 11vw, 95px);
-  font-weight: 900;
-  letter-spacing: 3px;
-  animation: slide 1s ease;
-}
-
-.hero h1 span {
-  color: #168bff;
-  text-shadow: 0 0 15px #168bff, 0 0 40px #0066ff;
-}
-
-.hero h2 {
-  color: #32aaff;
-  font-size: 22px;
-  letter-spacing: 7px;
-  margin: 15px 0;
-}
-
-.hero p {
-  color: #9fb5d8;
-  max-width: 600px;
-  line-height: 1.8;
-  font-size: 16px;
-  margin: 10px auto 25px;
-}
-
-.btn {
-  display: inline-block;
-  padding: 14px 27px;
-  border-radius: 30px;
-  text-decoration: none;
-  color: white;
-  background: linear-gradient(100deg,#0066ff,#00bfff);
-  box-shadow: 0 0 15px #168bff70;
-  margin: 8px;
-  transition: .3s;
-  font-weight: bold;
-}
-
-.btn:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 30px #168bff;
-}
-
-section {
-  padding: 85px 8%;
-  text-align: center;
-}
-
-.heading {
-  font-size: 36px;
-  margin-bottom: 15px;
-}
-
-.heading span { color: #168bff; }
-
-.subtitle {
-  color: #8fa8ce;
-  margin-bottom: 40px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-  gap: 22px;
-}
-
-.card {
-  background: linear-gradient(145deg,#101e35,#091426);
-  border: 1px solid #168bff45;
-  border-radius: 18px;
-  padding: 32px 22px;
-  transition: .4s;
-  box-shadow: 0 5px 25px #0008;
-}
-
-.card:hover {
-  transform: translateY(-10px);
-  border-color: #32aaff;
-  box-shadow: 0 0 25px #168bff55;
-}
-
-.card .symbol {
-  font-size: 35px;
-  margin-bottom: 15px;
-}
-
-.card h3 {
-  color: #35aaff;
-  margin-bottom: 13px;
-  font-size: 21px;
-}
-
-.card p {
-  color: #9fb5d8;
-  line-height: 1.7;
-}
-
-.contact-box {
-  background: linear-gradient(145deg,#101e35,#091426);
-  border: 1px solid #168bff55;
-  border-radius: 25px;
-  padding: 50px 20px;
-  box-shadow: 0 0 30px #0066ff20;
-}
-
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity .8s ease, transform .8s ease;
-}
-
-.reveal.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-footer {
-  border-top: 1px solid #168bff30;
-  text-align: center;
-  padding: 30px 15px;
-  color: #7891b5;
-  font-size: 14px;
-}
-
-footer span { color: #32aaff; }
-
-@keyframes slide {
-  from { opacity: 0; transform: translateY(-35px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fade {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes glow {
-  0%,100% { text-shadow: 0 0 10px #168bff; }
-  50% { text-shadow: 0 0 30px #00bfff, 0 0 50px #168bff; }
-}
-
-.hero h1 span {
-  animation: glow 3s infinite;
-}
-
-@media(max-width:600px) {
-  nav { padding: 17px 4%; }
-  nav a { margin-left: 9px; font-size: 12px; }
-  .logo { font-size: 20px; }
-  section { padding: 65px 5%; }
-  .heading { font-size: 29px; }
-  .hero h2 { font-size: 16px; letter-spacing: 4px; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#090909;color:#fff;font-family:Poppins,sans-serif}
+:root{--red:#ed1c24;--dark:#090909;--grey:#171717}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer}
+.container{width:90%;max-width:1200px;margin:auto}
+header{height:80px;display:flex;align-items:center;justify-content:space-between;padding:0 5%;background:#080808;position:sticky;top:0;z-index:99;border-bottom:1px solid #242424}
+.logo{font-family:'Barlow Condensed';font-size:30px;font-weight:900;letter-spacing:1px}
+.logo span{color:var(--red)}
+nav{display:flex;gap:25px}
+nav a{font-size:13px;color:#ddd;transition:.3s}
+nav a:hover{color:var(--red)}
+.menu{display:none;background:none;border:0;color:white;font-size:28px}
+.hero{min-height:650px;display:flex;align-items:center;position:relative;background:linear-gradient(90deg,#050505 5%,rgba(0,0,0,.82) 45%,rgba(0,0,0,.2)),url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=2000&q=85') center/cover}
+.hero-content{width:90%;max-width:1200px;margin:auto;padding:90px 0}
+.tag{color:var(--red);letter-spacing:4px;font-size:13px;font-weight:700}
+.hero h1{font-family:'Barlow Condensed';font-size:clamp(65px,10vw,115px);line-height:.95;margin:20px 0;text-transform:uppercase}
+.hero h1 span{color:var(--red)}
+.hero p{color:#ccc;max-width:500px;line-height:1.8;font-size:14px}
+.btn{display:inline-block;background:var(--red);padding:15px 28px;color:white;font-weight:700;font-size:13px;margin-top:28px;border:0;transition:.3s}
+.btn:hover{background:#fff;color:#111;transform:translateY(-3px)}
+section{padding:90px 0}
+.section-title{text-align:center;margin-bottom:45px}
+.section-title small{color:var(--red);letter-spacing:4px;font-weight:700}
+.section-title h2{font-family:'Barlow Condensed';font-size:55px;text-transform:uppercase;margin-top:8px}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.photo{width:100%;height:420px;object-fit:cover;display:block}
+.about-text h2{font-family:'Barlow Condensed';font-size:52px;line-height:1.05;margin-bottom:20px}
+.about-text h2 span{color:var(--red)}
+.about-text p{color:#aaa;line-height:1.9;font-size:14px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);background:#151515;padding:35px 5%;text-align:center}
+.stat h3{font-family:'Barlow Condensed';font-size:42px;color:var(--red)}
+.stat p{font-size:12px;color:#aaa}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:#151515;overflow:hidden;transition:.35s;border:1px solid #222}
+.card:hover{transform:translateY(-8px);border-color:var(--red)}
+.card img{width:100%;height:230px;object-fit:cover;display:block}
+.card-content{padding:24px}
+.card h3{font-family:'Barlow Condensed';font-size:29px;margin-bottom:10px}
+.card p{font-size:13px;color:#aaa;line-height:1.7}
+.trainer img{height:300px}
+.price{font-family:'Barlow Condensed';font-size:42px;color:var(--red);margin:15px 0}
+.price small{font:12px Poppins;color:#aaa}
+.plan{padding:32px;text-align:center}
+.plan.featured{border:1px solid var(--red)}
+.plan ul{list-style:none;color:#bbb;font-size:13px;line-height:2.7;margin-top:18px}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.gallery img{width:100%;height:240px;object-fit:cover;display:block;transition:.4s}
+.gallery img:hover{transform:scale(1.025)}
+.cta{background:linear-gradient(90deg,rgba(0,0,0,.9),rgba(0,0,0,.5)),url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1600&q=85') center/cover;text-align:center}
+.cta h2{font-family:'Barlow Condensed';font-size:60px}
+.cta p{color:#ddd}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.contact-info p{color:#aaa;margin:18px 0;font-size:14px}
+input,textarea{width:100%;padding:15px;background:#171717;border:1px solid #333;color:white;margin-bottom:14px;font:14px Poppins}
+textarea{height:120px;resize:vertical}
+footer{background:#050505;padding:35px 5%;text-align:center;color:#777;font-size:12px}
+footer span{color:var(--red)}
+.reveal{opacity:0;transform:translateY(30px);transition:all .8s}
+.reveal.show{opacity:1;transform:translateY(0)}
+@media(max-width:800px){
+ nav{display:none;position:absolute;top:80px;left:0;width:100%;background:#111;padding:25px;flex-direction:column}
+ nav.active{display:flex}
+ .menu{display:block}
+ .hero{min-height:570px}
+ .about-grid,.contact-grid{grid-template-columns:1fr}
+ .cards{grid-template-columns:1fr}
+ .stats{grid-template-columns:repeat(2,1fr);gap:25px}
+ .gallery{grid-template-columns:repeat(2,1fr)}
+ .gallery img{height:170px}
+ .section-title h2{font-size:43px}
+ .about-text h2{font-size:43px}
+ .cta h2{font-size:45px}
 }
 </style>
 </head>
 
 <body>
 
-<nav>
-  <div class="logo">MAHIPAL.</div>
-  <div>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
-
-<header class="hero" id="home">
-  <div class="small-title">WELCOME TO MY WORLD</div>
-  <h1>MAHI<span>PAL.</span></h1>
-  <h2>DIGITAL CREATOR</h2>
-  <p>Creativity. Technology. Innovation.<br>
-  Building my digital identity and turning ideas into reality.</p>
-  <div>
-    <a href="#about" class="btn">Explore More ↗</a>
-    <a href="#contact" class="btn">Contact Me</a>
-  </div>
+<header>
+ <div class="logo">IRON <span>HOUSE.</span></div>
+ <button class="menu" onclick="document.querySelector('nav').classList.toggle('active')">☰</button>
+ <nav>
+  <a href="#home">HOME</a>
+  <a href="#about">ABOUT</a>
+  <a href="#programs">PROGRAMS</a>
+  <a href="#trainers">TRAINERS</a>
+  <a href="#membership">MEMBERSHIP</a>
+  <a href="#contact">CONTACT</a>
+ </nav>
 </header>
 
-<section id="about" class="reveal">
-  <h2 class="heading">ABOUT <span>ME</span></h2>
-  <p class="subtitle">Discover my digital journey</p>
-  <div class="card">
-    <div class="symbol">✦</div>
-    <h3>I'm Mahipal</h3>
-    <p>I'm a creative person interested in technology, design and digital experiences. Welcome to my personal space on the internet.</p>
+<div class="hero" id="home">
+ <div class="hero-content">
+  <div class="tag">WELCOME TO IRON HOUSE</div>
+  <h1>BUILD YOUR<br><span>BEST</span> VERSION</h1>
+  <p>Push your limits. Build your strength. Transform your body and create a stronger version of yourself.</p>
+  <a href="#membership" class="btn">EXPLORE MEMBERSHIP →</a>
+ </div>
+</div>
+
+<section id="about">
+ <div class="container about-grid reveal">
+  <img class="photo" src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=1000&q=85" alt="Gym training">
+  <div class="about-text">
+   <div class="tag">ABOUT OUR GYM</div>
+   <h2>MORE THAN A GYM.<br><span>IT'S A LIFESTYLE.</span></h2>
+   <p>Welcome to IRON HOUSE, where dedication meets transformation. Train with purpose, build confidence and become stronger every day.</p>
+   <a href="#contact" class="btn">JOIN OUR COMMUNITY →</a>
   </div>
+ </div>
 </section>
 
-<section class="reveal">
-  <h2 class="heading">MY <span>SKILLS</span></h2>
-  <p class="subtitle">Learning, creating and growing</p>
-  <div class="grid">
-    <div class="card"><div class="symbol">⌨️</div><h3>HTML</h3><p>Website structure and development.</p></div>
-    <div class="card"><div class="symbol">🎨</div><h3>CSS</h3><p>Creative and modern web designs.</p></div>
-    <div class="card"><div class="symbol">💻</div><h3>Web Design</h3><p>Building digital experiences.</p></div>
-    <div class="card"><div class="symbol">💡</div><h3>Creativity</h3><p>Turning ideas into reality.</p></div>
+<div class="stats">
+ <div class="stat"><h3>500+</h3><p>HAPPY MEMBERS</p></div>
+ <div class="stat"><h3>15+</h3><p>EXPERT TRAINERS</p></div>
+ <div class="stat"><h3>20+</h3><p>FITNESS PROGRAMS</p></div>
+ <div class="stat"><h3>7 DAYS</h3><p>OPEN EVERY WEEK</p></div>
+</div>
+
+<section id="programs">
+ <div class="container">
+  <div class="section-title reveal"><small>WHAT WE OFFER</small><h2>OUR PROGRAMS</h2></div>
+  <div class="cards">
+   <div class="card reveal">
+    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=80" alt="Strength training">
+    <div class="card-content"><h3>STRENGTH TRAINING</h3><p>Build power, improve performance and develop full-body strength.</p></div>
+   </div>
+   <div class="card reveal">
+    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=900&q=80" alt="Fitness workout">
+    <div class="card-content"><h3>PERSONAL FITNESS</h3><p>Get focused guidance and a workout plan that fits your goals.</p></div>
+   </div>
+   <div class="card reveal">
+    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=900&q=80" alt="Group fitness">
+    <div class="card-content"><h3>FUNCTIONAL TRAINING</h3><p>Improve mobility, balance, stamina and everyday fitness.</p></div>
+   </div>
   </div>
+ </div>
 </section>
 
-<section class="reveal">
-  <h2 class="heading">MY <span>PROJECTS</span></h2>
-  <p class="subtitle">My creative work</p>
-  <div class="grid">
-    <div class="card"><div class="symbol">🌐</div><h3>Personal Website</h3><p>My own digital identity and personal brand.</p></div>
-    <div class="card"><div class="symbol">🚀</div><h3>Digital Journey</h3><p>Exploring new ideas and technologies.</p></div>
+<section id="trainers">
+ <div class="container">
+  <div class="section-title reveal"><small>MEET THE TEAM</small><h2>EXPERT TRAINERS</h2></div>
+  <div class="cards">
+   <div class="card trainer reveal">
+    <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&w=900&q=80" alt="Fitness trainer">
+    <div class="card-content"><h3>PERSONAL TRAINER</h3><p>Strength & conditioning</p></div>
+   </div>
+   <div class="card trainer reveal">
+    <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=900&q=80" alt="Gym coach">
+    <div class="card-content"><h3>FITNESS COACH</h3><p>Body transformation</p></div>
+   </div>
+   <div class="card trainer reveal">
+    <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=900&q=80" alt="Fitness professional">
+    <div class="card-content"><h3>STRENGTH COACH</h3><p>Performance training</p></div>
+   </div>
   </div>
+ </div>
 </section>
 
-<section class="reveal">
-  <h2 class="heading">MY <span>SERVICES</span></h2>
-  <p class="subtitle">Creative digital work</p>
-  <div class="grid">
-    <div class="card"><div class="symbol">🖥️</div><h3>Website Design</h3><p>Modern and responsive websites.</p></div>
-    <div class="card"><div class="symbol">✨</div><h3>Personal Branding</h3><p>Building a unique online identity.</p></div>
-    <div class="card"><div class="symbol">⚡</div><h3>Digital Projects</h3><p>Creative digital experiences.</p></div>
+<section id="membership">
+ <div class="container">
+  <div class="section-title reveal"><small>CHOOSE YOUR PLAN</small><h2>MEMBERSHIP PLANS</h2></div>
+  <div class="cards">
+   <div class="card plan reveal">
+    <h3>MONTHLY</h3><div class="price">₹999 <small>/ month</small></div>
+    <ul><li>Gym Access</li><li>Basic Workout Plan</li><li>Locker Facility</li></ul>
+    <a class="btn" href="#contact">GET STARTED</a>
+   </div>
+   <div class="card plan featured reveal">
+    <h3>QUARTERLY</h3><div class="price">₹2499 <small>/ 3 months</small></div>
+    <ul><li>Full Gym Access</li><li>Workout Guidance</li><li>Fitness Assessment</li></ul>
+    <a class="btn" href="#contact">GET STARTED</a>
+   </div>
+   <div class="card plan reveal">
+    <h3>YEARLY</h3><div class="price">₹7999 <small>/ year</small></div>
+    <ul><li>Full Gym Access</li><li>Personal Guidance</li><li>Priority Support</li></ul>
+    <a class="btn" href="#contact">GET STARTED</a>
+   </div>
   </div>
+ </div>
 </section>
 
-<section id="contact" class="reveal">
-  <div class="contact-box">
-    <h2 class="heading">LET'S <span>CONNECT</span></h2>
-    <p class="subtitle">Have an idea? Let's talk!</p>
-    <a href="mailto:mahipalsinghzala7@gmail.com" class="btn">✉ Email Me</a>
-    <a href="https://instagram.com/mahipalsingh____14" class="btn">Instagram ↗</a>
-    <a href="https://wa.me/918320445294" class="btn">WhatsApp ↗</a>
+<section>
+ <div class="container">
+  <div class="section-title reveal"><small>INSIDE IRON HOUSE</small><h2>GYM GALLERY</h2></div>
+  <div class="gallery reveal">
+   <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80" alt="Gym gallery">
+   <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=800&q=80" alt="Gym workout">
+   <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80" alt="Fitness training">
+   <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=800&q=80" alt="Weight training">
+   <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80" alt="Gym exercise">
+   <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=800&q=80" alt="Fitness club">
   </div>
+ </div>
+</section>
+
+<section class="cta">
+ <div class="container reveal">
+  <h2>YOUR TRANSFORMATION<br>STARTS TODAY.</h2>
+  <p>Stop waiting. Start training. Become stronger.</p>
+  <a href="#contact" class="btn">JOIN IRON HOUSE →</a>
+ </div>
+</section>
+
+<section id="contact">
+ <div class="container">
+  <div class="section-title reveal"><small>GET IN TOUCH</small><h2>CONTACT US</h2></div>
+  <div class="contact-grid">
+   <div class="contact-info">
+    <h2>LET'S START YOUR FITNESS JOURNEY</h2>
+    <p>📍 Your Gym Address, Your City</p>
+    <p>📞 +91 99999 99999</p>
+    <p>✉️ ironhouse@example.com</p>
+    <p>🕒 Monday - Sunday | 6 AM - 10 PM</p>
+   </div>
+   <form id="enquiryForm">
+    <input id="name" placeholder="Your Name" required>
+    <input id="phone" placeholder="Your Phone Number" required>
+    <textarea id="message" placeholder="Tell us your fitness goal"></textarea>
+    <button class="btn" type="submit">SEND ENQUIRY →</button>
+   </form>
+  </div>
+ </div>
 </section>
 
 <footer>
-  © 2026 <span>MAHIPAL.</span> All Rights Reserved.
-  <p style="margin-top:8px">DIGITAL CREATOR</p>
+ <div class="logo">IRON <span>HOUSE.</span></div>
+ <p style="margin-top:12px">© 2026 IRON HOUSE FITNESS CLUB. ALL RIGHTS RESERVED.</p>
+ <p style="margin-top:8px">DESIGNED WITH <span>♥</span> FOR FITNESS.</p>
 </footer>
 
 <script>
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-    }
-  });
-}, { threshold: 0.12 });
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(entry=>{
+  if(entry.isIntersecting){
+   entry.target.classList.add('show');
+   observer.unobserve(entry.target);
+  }
+ });
+},{threshold:.12});
 
-document.querySelectorAll(".reveal").forEach(item => {
-  observer.observe(item);
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+document.getElementById('enquiryForm').addEventListener('submit',function(e){
+ e.preventDefault();
+ const name=document.getElementById('name').value;
+ const phone=document.getElementById('phone').value;
+ const message=document.getElementById('message').value;
+ const text=`Hello IRON HOUSE!%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AMessage: ${encodeURIComponent(message)}`;
+ window.open('https://wa.me/919999999999?text='+text,'_blank');
 });
 </script>
 
